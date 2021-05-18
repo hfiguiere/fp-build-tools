@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ ! -d .flatpak-builder ] ; then
+	echo "Not a flatpak build dir"
+	exit 1
+fi
+
+rm -r ./repo
+rm -rf ./.flatpak-builder/build
+rm -r ./.flatpak-builder/cache

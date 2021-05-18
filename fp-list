@@ -1,0 +1,3 @@
+#!/bin/sh
+
+flatpak list --columns=name,application,version,branch,origin,installation,size $*

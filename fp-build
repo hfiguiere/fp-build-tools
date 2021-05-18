@@ -1,0 +1,25 @@
+#!/bin/sh
+
+app_id=`basename $PWD`
+
+if test -f $app_id.json ; then
+   manifest=$app_id.json
+elif test -f $app_id.yaml; then
+   manifest=$app_id.yaml
+elif test -f $app_id.yml; then
+   manifest=$app_id.yml
+else
+   echo "Manifest not found"
+   exit 1
+fi
+
+
+
+if test -z "$NO_INSTALL" ; then
+   flatpak-builder --force-clean --ccache --install --user $* repo $manifest
+else
+   flatpak-builder --force-clean --ccache $* repo $manifest
+fi
+
+flatpak run org.freedesktop.appstream-glib validate repo/files/share/appdata/$app_id.appdata.xml
+touch repo/.noborg

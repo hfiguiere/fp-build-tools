@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ ! -d .flatpak-builder ] ; then
+	echo "Not a flatpak build dir"
+	exit 1
+fi
+
+CCACHE_DIR=`pwd`/.flatpak-builder/ccache ccache $*
