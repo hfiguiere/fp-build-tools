@@ -1,5 +1,7 @@
 #!/bin/sh
 
+FLATPAK_BUILDER="flatpak run org.flatpak.Builder"
+
 app_id=`basename $PWD`
 
 if test -f $app_id.json ; then
@@ -16,9 +18,9 @@ fi
 
 
 if test -z "$NO_INSTALL" ; then
-   flatpak-builder --force-clean --ccache --install --user $* repo $manifest
+   $FLATPAK_BUILDER --force-clean --ccache --install --user $* repo $manifest
 else
-   flatpak-builder --force-clean --ccache $* repo $manifest
+   $FLAPTAK_BUILDER --force-clean --ccache $* repo $manifest
 fi
 
 flatpak run org.freedesktop.appstream-glib validate repo/files/share/appdata/$app_id.appdata.xml
