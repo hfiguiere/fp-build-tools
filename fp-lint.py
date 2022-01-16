@@ -27,8 +27,6 @@ def load_manifest_yaml(manifest):
             m = yaml.safe_load(f)
         except yaml.YAMLError as e:
             print(e)
-        # YAML use "app-id"
-        m["id"] = m["app-id"]
     return m
 
 def lint_manifest(manifest):

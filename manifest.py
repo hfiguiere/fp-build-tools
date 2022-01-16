@@ -8,7 +8,11 @@ class Manifest:
         self.manifest = manifest
 
     def id(self):
-        return self.manifest["id"]
+        """ Return the id. It can be from "id" or "app-id" """
+        if "id" in self.manifest:
+            return self.manifest["id"]
+        if "app-id" in self.manifest:
+            return self.manifest["app-id"]
 
     def is_extension(self):
         """ True if the manifest is for an extension  """
