@@ -8,6 +8,7 @@ import os
 import yaml
 
 from manifest import Manifest
+from linter import Linter
 
 parser = argparse.ArgumentParser()
 parser.add_argument('manifests', nargs='*')
@@ -46,9 +47,15 @@ def lint_manifest(manifest):
 
     mobj = Manifest(m)
 
-    print("manifest contains {} keys".format(len(m)))
-    print("app-id {}".format(mobj.id()))
-    print("TODO", manifest)
+    # Run the linter
+    linter = Linter(mobj)
+    lints = linter.lint()
+
+    for l in lints:
+        print(l)
+    if len(lints) > 0:
+        print("{} warnings".format(len(lints)))
+
     return True;
 
 manifests = []
