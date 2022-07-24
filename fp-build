@@ -1,9 +1,11 @@
 #!/bin/sh
 
-if which flatpak-builder ; then
-   FLATPAK_BUILDER=flatpak-builder
-else
-   FLATPAK_BUILDER="flatpak run org.flatpak.Builder"
+if [ -z "$FLATPAK_BUILDER" ] ; then
+   if which flatpak-builder ; then
+      FLATPAK_BUILDER=flatpak-builder
+   else
+      FLATPAK_BUILDER="flatpak run org.flatpak.Builder"
+   fi
 fi
 
 app_id=`basename $PWD`
