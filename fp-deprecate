@@ -1,0 +1,34 @@
+#!/bin/sh
+
+set -e
+set -x
+
+app_id=`basename $PWD`
+
+if test -f $app_id.json ; then
+   manifest=$app_id.json
+elif test -f $app_id.yaml; then
+   manifest=$app_id.yaml
+elif test -f $app_id.yml; then
+   manifest=$app_id.yml
+else
+   echo "Manifest not found"
+   exit 1
+fi
+
+app_name=`echo $app_id | grep -o "[^\\.]*$"`
+
+git checkout branch/19.08
+git pull origin branch/19.08
+git checkout -b eol
+
+sed -i '2 i \    "end-of-life": "The plugin has been renamed to org.freedesktop.LinuxAudio.Plugins.@APP_NAME@",' flathub.json
+sed -i '3 i \    "end-of-life-rebase": "org.freedesktop.LinuxAudio.Plugins.@APP_NAME@",' flathub.json
+
+sed -i s/@APP_NAME@/$app_name/g flathub.json
+
+json-glib-validate flathub.json
+
+git add flathub.json
+git commit -m "Deprecate /  EOL"
+

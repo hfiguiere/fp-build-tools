@@ -1,0 +1,41 @@
+#!/bin/sh
+
+set -e
+set -x
+
+if test -z "$1"; then
+   echo "Need a branch"
+   exit 1
+fi
+case $1 in
+    master|beta)
+        branch=$1
+        ;;
+   *)
+        branch=branch/$1
+        ;;
+esac
+
+app_id=`basename $PWD`
+
+if test -f $app_id.json ; then
+   manifest=$app_id.json
+elif test -f $app_id.yaml; then
+   manifest=$app_id.yaml
+elif test -f $app_id.yml; then
+   manifest=$app_id.yml
+else
+   echo "Manifest not found"
+   exit 1
+fi
+
+git checkout $branch
+git pull origin $branch
+# git checkout -b eol
+
+sed -i '2 i \    "end-of-life": "The branch is deprecated",' flathub.json
+
+json-glib-validate flathub.json
+
+git add flathub.json
+git commit -m "Close branch"
