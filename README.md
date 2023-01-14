@@ -10,6 +10,7 @@ These commands assume that:
 
 - fp-build: simply build the package and install it locally. You can
   pass more options to flatpak-builder.
+  It will also validate the AppStream file and the flatpak-external-data-checker
 
 - fp-list: `flatpak list` with some different display options
 

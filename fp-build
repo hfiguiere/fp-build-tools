@@ -30,4 +30,5 @@ else
 fi
 
 flatpak run org.freedesktop.appstream-glib validate repo/files/share/appdata/$app_id.appdata.xml
+flatpak run org.flathub.flatpak-external-data-checker $manifest
 touch repo/.noborg
