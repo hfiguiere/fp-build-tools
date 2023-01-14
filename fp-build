@@ -8,6 +8,8 @@ if [ -z "$FLATPAK_BUILDER" ] ; then
    fi
 fi
 
+echo "Using $FLATPAK_BUILDER to build"
+
 app_id=`basename $PWD`
 
 if test -f $app_id.json ; then

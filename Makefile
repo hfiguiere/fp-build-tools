@@ -5,6 +5,7 @@
 
 
 link:
+	mkdir -p ~/bin
 	ln -sf ${PWD}/fp-build ~/bin/
 	ln -sf ${PWD}/fp-ccache ~/bin/
 	ln -sf ${PWD}/fp-close-branch ~/bin/

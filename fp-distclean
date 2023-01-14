@@ -8,3 +8,4 @@ fi
 rm -r ./repo
 rm -rf ./.flatpak-builder/build
 rm -r ./.flatpak-builder/cache
+rm -r ./.flatpak-builder/screenshots-cache
