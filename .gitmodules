@@ -1,0 +1,3 @@
+[submodule "flatpak-manifest-generator"]
+	path = flatpak-manifest-generator
+	url = https://gitlab.com/hfiguiere/flatpak-manifest-generator.git

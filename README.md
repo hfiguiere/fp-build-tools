@@ -22,4 +22,9 @@ These commands assume that:
 
 To install:
 
-Type `make`. The commands will be installed in `~/bin`.
+Type `make install`. The commands will be installed in `~/bin`.
+
+## flatpak-manifest-generator
+
+flatpak-manifest-generator is now included. It needs rust + cargo
+(standard rust installation) to be built.
