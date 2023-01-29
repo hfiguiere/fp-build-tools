@@ -6,7 +6,7 @@ These commands assume that:
 2. the package manifest in that directory is the package ID with the right extension.
 3. that you are in that package directory.
 
-
+The scripts are in the scripts/
 
 - fp-build: simply build the package and install it locally. You can
   pass more options to flatpak-builder.
@@ -28,3 +28,5 @@ Type `make install`. The commands will be installed in `~/bin`.
 
 flatpak-manifest-generator is now included. It needs rust + cargo
 (standard rust installation) to be built.
+
+This is licensed under GPL-3.0 or later.
