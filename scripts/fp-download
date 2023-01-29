@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+if [ $# -lt 1 ] ; then
+   echo "Not enough arguments"
+   exit 255
+fi
+
+filename=`basename $1`
+wget $1 -O $filename
+
+sha256=`sha256sum $filename | cut -f 1 -d ' '`
+
+echo "Checksum is $sha256"
+
+destdir=.flatpak-builder/downloads/$sha256
+mkdir -p $destdir
+mv $filename $destdir
+
+echo "File $filename copied to $destdir"
