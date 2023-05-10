@@ -1,3 +1,4 @@
+com.chowdsp.BYOD
 net.sonobus.SonoBus
 org.freedesktop.LinuxAudio.Plugins.ADLplug
 org.freedesktop.LinuxAudio.Plugins.Airwindows
@@ -6,6 +7,7 @@ org.freedesktop.LinuxAudio.Plugins.AVLDrums
 org.freedesktop.LinuxAudio.Plugins.CAPS
 org.freedesktop.LinuxAudio.Plugins.Calf
 org.freedesktop.LinuxAudio.Plugins.Cardinal
+org.freedesktop.LinuxAudio.Plugins.ChowDSP-Plugins
 org.freedesktop.LinuxAudio.Plugins.ChowTapeModel
 org.freedesktop.LinuxAudio.Plugins.CMT
 org.freedesktop.LinuxAudio.Plugins.Dexed
