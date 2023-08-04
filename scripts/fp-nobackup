@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+if test $# -ne 1; then
+    echo "Dir name required"
+    exit 1
+fi
+
+echo "Signature: 8a477f597d28d172789f06886806bc55" > $1/CACHEDIR.TAG

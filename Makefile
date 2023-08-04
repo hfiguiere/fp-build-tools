@@ -7,6 +7,7 @@ all: build
 link:
 	install -d ~/bin
 	ln -sf ${PWD}/scripts/fp-build ~/bin/
+	ln -sf ${PWD}/scripts/fp-nobackup ~/bin/
 	ln -sf ${PWD}/scripts/fp-ccache ~/bin/
 	ln -sf ${PWD}/scripts/fp-close-branch ~/bin/
 	ln -sf ${PWD}/scripts/fp-deprecate ~/bin/
