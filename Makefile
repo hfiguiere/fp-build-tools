@@ -14,9 +14,7 @@ link:
 	ln -sf ${PWD}/scripts/fp-distclean ~/bin/
 	ln -sf ${PWD}/scripts/fp-download ~/bin/
 	ln -sf ${PWD}/scripts/fp-list ~/bin/
-	ln -sf ${PWD}/scripts/fp-2008 ~/bin/
-	ln -sf ${PWD}/scripts/fp-2108 ~/bin/
-	ln -sf ${PWD}/scripts/fp-2208 ~/bin/
+	ln -sf ${PWD}/scripts/fp-2308 ~/bin/
 
 build:
 	test -f flatpak-manifest-generator/Cargo.toml
