@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# fail on the first error.
+set -e
+
 if [ -z "$FLATPAK_BUILDER" ] ; then
    if which flatpak-builder ; then
       FLATPAK_BUILDER=flatpak-builder
