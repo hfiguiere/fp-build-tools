@@ -34,7 +34,12 @@ else
    $FLAPTAK_BUILDER --force-clean --ccache $* repo $manifest
 fi
 
-flatpak run org.freedesktop.appstream-glib validate repo/files/share/appdata/$app_id.appdata.xml
+# Newer version of flatpak-builder seems to have the AppStream file in metainfo.
+if test -f repo/files/share/appdata/$app_id.appdata.xml; then
+    flatpak run org.freedesktop.appstream-glib validate repo/files/share/appdata/$app_id.appdata.xml
+else
+    flatpak run org.freedesktop.appstream-glib validate repo/files/share/metainfo/$app_id.metainfo.xml
+fi
 flatpak run org.flathub.flatpak-external-data-checker $manifest
 fp-nobackup repo
 fp-nobackup .flatpak-builder
