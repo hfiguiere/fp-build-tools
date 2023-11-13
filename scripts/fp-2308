@@ -27,5 +27,6 @@ sed -i 's/23\.08beta/23\.08/' $app_id.*
 
 git add $app_id.*
 git commit -m "23.08 branch"
+git submodule update --init
 fp-build
 
