@@ -23,6 +23,7 @@ org.freedesktop.LinuxAudio.Plugins.gmsynth
 org.freedesktop.LinuxAudio.Plugins.GuitarML
 org.freedesktop.LinuxAudio.Plugins.GxPlugins
 org.freedesktop.LinuxAudio.Plugins.Helm
+org.freedesktop.LinuxAudio.Plugins.jc303
 org.freedesktop.LinuxAudio.Plugins.KapitonovPluginsPack
 org.freedesktop.LinuxAudio.Plugins.LSP
 org.freedesktop.LinuxAudio.Plugins.master_me
