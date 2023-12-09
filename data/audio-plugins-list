@@ -36,10 +36,12 @@ org.freedesktop.LinuxAudio.Plugins.setBfree
 org.freedesktop.LinuxAudio.Plugins.sfizz
 org.freedesktop.LinuxAudio.Plugins.Sorcer
 org.freedesktop.LinuxAudio.Plugins.SoSynthLV2
+org.freedesktop.LinuxAudio.Plugins.SpectMorph
 org.freedesktop.LinuxAudio.Plugins.Surge
 org.freedesktop.LinuxAudio.Plugins.swh
 org.freedesktop.LinuxAudio.Plugins.TAP
 org.freedesktop.LinuxAudio.Plugins.Tunefish4
+org.freedesktop.LinuxAudio.Plugins.UhhyouPlugins
 org.freedesktop.LinuxAudio.Plugins.VL1Emulator
 org.freedesktop.LinuxAudio.Plugins.WhiteElephantAudio
 org.freedesktop.LinuxAudio.Plugins.WolfShaper
