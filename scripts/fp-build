@@ -35,11 +35,17 @@ else
 fi
 
 # Newer version of flatpak-builder seems to have the AppStream file in metainfo.
-if test -f repo/files/share/appdata/$app_id.appdata.xml; then
-    flatpak run org.freedesktop.appstream-glib validate repo/files/share/appdata/$app_id.appdata.xml
-else
-    flatpak run org.freedesktop.appstream-glib validate repo/files/share/metainfo/$app_id.metainfo.xml
+appstream_file=repo/files/share/metainfo/$app_id.metainfo.xml
+if test ! -f $appstream_file; then
+    appstream_file=repo/files/share/appdata/$app_id.appdata.xml
 fi
+
+flatpak run org.freedesktop.appstream-glib validate $appstream_file
+flatpak run --command=appstreamcli org.flatpak.Builder validate $appstream_file
+
+flatpak run --command=flatpak-builder-lint org.flatpak.Builder --exceptions manifest $manifest
+flatpak run --command=flatpak-builder-lint org.flatpak.Builder --exceptions builddir repo
+
 flatpak run org.flathub.flatpak-external-data-checker $manifest
 fp-nobackup repo
 fp-nobackup .flatpak-builder
