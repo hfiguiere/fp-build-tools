@@ -20,6 +20,7 @@ org.freedesktop.LinuxAudio.Plugins.Fabla
 org.freedesktop.LinuxAudio.Plugins.Fire
 org.freedesktop.LinuxAudio.Plugins.Geonkick
 org.freedesktop.LinuxAudio.Plugins.gmsynth
+org.freedesktop.LinuxAudio.Plugins.guitarixvst
 org.freedesktop.LinuxAudio.Plugins.GuitarML
 org.freedesktop.LinuxAudio.Plugins.GxPlugins
 org.freedesktop.LinuxAudio.Plugins.Helm
