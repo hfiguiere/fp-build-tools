@@ -4,11 +4,7 @@
 set -e
 
 if [ -z "$FLATPAK_BUILDER" ] ; then
-   if which flatpak-builder ; then
-      FLATPAK_BUILDER=flatpak-builder
-   else
-      FLATPAK_BUILDER="flatpak run org.flatpak.Builder"
-   fi
+    FLATPAK_BUILDER="flatpak run org.flatpak.Builder"
 fi
 
 echo "Using $FLATPAK_BUILDER to build"
