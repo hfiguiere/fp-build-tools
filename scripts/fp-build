@@ -36,7 +36,6 @@ if test ! -f $appstream_file; then
     appstream_file=repo/files/share/appdata/$app_id.appdata.xml
 fi
 
-flatpak run org.freedesktop.appstream-glib validate $appstream_file
 flatpak run --command=appstreamcli org.flatpak.Builder validate $appstream_file
 
 flatpak run --command=flatpak-builder-lint org.flatpak.Builder --exceptions manifest $manifest
