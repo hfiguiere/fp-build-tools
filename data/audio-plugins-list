@@ -1,6 +1,9 @@
 com.chowdsp.BYOD
+- org.freedesktop.LinuxAudio.Plugins.BYOD
 com.thewavewarden.Odin2
+- org.freedesktop.LinuxAudio.Plugins.Odin2
 net.sonobus.SonoBus
+- org.freedesktop.LinuxAudio.Plugins.SonoBus
 org.freedesktop.LinuxAudio.Plugins.ADLplug
 org.freedesktop.LinuxAudio.Plugins.Airwindows
 org.freedesktop.LinuxAudio.Plugins.ArtyFX
@@ -52,5 +55,8 @@ org.freedesktop.LinuxAudio.Plugins.Yoshimi
 org.freedesktop.LinuxAudio.Plugins.ZamPlugins
 org.freedesktop.LinuxAudio.Plugins.ZynFusion
 org.guitarix.Guitarix
+- org.freedesktop.LinuxAudio.Plugins.Guitarix
 org.stochas.Stochas
+- org.freedesktop.LinuxAudio.Plugins.Stochas
 org.surge_synth_team.surge-xt
+- org.freedesktop.LinuxAudio.Plugins.Surge-XT
