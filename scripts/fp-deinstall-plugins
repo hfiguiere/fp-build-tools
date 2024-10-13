@@ -1,0 +1,12 @@
+#!/bin/sh
+
+branch="22.08"
+plugins=
+
+for i in `cat data/audio-plugins-list`; do
+    if [[ "$i" =~ ^org.freedesktop.LinuxAudio.Plugins ]] ;then
+        plugins="${plugins} ${i}//${branch}"
+    fi
+done
+
+flatpak uninstall $plugins
