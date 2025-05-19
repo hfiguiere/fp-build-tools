@@ -11,6 +11,8 @@ link:
 	ln -sf ${PWD}/scripts/fp-ccache ~/bin/
 	ln -sf ${PWD}/scripts/fp-close-branch ~/bin/
 	ln -sf ${PWD}/scripts/fp-deprecate ~/bin/
+	ln -sf ${PWD}/scripts/fp-deinstall-plugins ~/bin/
+	ln -sf ${PWD}/scripts/fp-install-plugins ~/bin/
 	ln -sf ${PWD}/scripts/fp-distclean ~/bin/
 	ln -sf ${PWD}/scripts/fp-download ~/bin/
 	ln -sf ${PWD}/scripts/fp-list ~/bin/
