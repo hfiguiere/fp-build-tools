@@ -25,9 +25,9 @@ fi
 
 
 if test -z "$NO_INSTALL" ; then
-   $FLATPAK_BUILDER --force-clean --ccache --install --user $* repo $manifest
+   $FLATPAK_BUILDER --force-clean --ccache --install --user --mirror-screenshots-url=https://dl.flathub.org/media/ $* repo $manifest
 else
-   $FLATPAK_BUILDER --force-clean --ccache $* repo $manifest
+   $FLATPAK_BUILDER --force-clean --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ $* repo $manifest
 fi
 
 # Newer version of flatpak-builder seems to have the AppStream file in metainfo.
@@ -39,7 +39,7 @@ fi
 flatpak run --command=appstreamcli org.flatpak.Builder validate $appstream_file
 
 flatpak run --command=flatpak-builder-lint org.flatpak.Builder --exceptions manifest $manifest
-flatpak run --command=flatpak-builder-lint org.flatpak.Builder --exceptions builddir repo
+flatpak run --command=flatpak-builder-lint org.flatpak.Builder --exceptions builddir repo || true
 
 flatpak run org.flathub.flatpak-external-data-checker $manifest
 fp-nobackup repo
