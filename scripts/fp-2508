@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -e
+set -x
+
+app_id=`basename $PWD`
+
+if test -f $app_id.json ; then
+   manifest=$app_id.json
+elif test -f $app_id.yaml; then
+   manifest=$app_id.yaml
+elif test -f $app_id.yml; then
+   manifest=$app_id.yml
+else
+   echo "Manifest not found"
+   exit 1
+fi
+
+app_name=`echo $app_id | grep -o "[^\\.]*$"`
+
+git checkout branch/24.08
+git pull -r origin branch/24.08
+git checkout -b branch/25.08
+
+sed -i 's/24\.08/25\.08/' $app_id.*
+
+git add $app_id.*
+git submodule update --init
+if [ -d "shared-modules" ]; then
+    cd shared-modules && git pull -r origin master && cd -
+    git add shared-modules
+fi
+git commit -m "25.08 branch"
+fp-build
+

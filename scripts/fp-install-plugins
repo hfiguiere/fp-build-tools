@@ -1,6 +1,6 @@
 #!/bin/sh
 
-branch="24.08"
+branch="25.08"
 plugins=
 
 for i in `cat data/audio-plugins-list`; do
